@@ -1,0 +1,8 @@
+dotnet new classlib -n CrossPlatformUtils --framework netstandard2.0
+dotnet new mstest -n CrossPlatformUtils.Tests
+dotnet add CrossPlatformUtils.Tests reference CrossPlatformUtils
+dotnet new console -n TestApp
+dotnet add TestApp reference CrossPlatformUtils
+dotnet build
+dotnet test
+dotnet run --project TestApp
